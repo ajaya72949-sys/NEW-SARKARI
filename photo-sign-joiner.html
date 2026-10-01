@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Join a photo and signature into one image locally in your browser.">
+  <title>Photo Sign Joiner | New SARKARI UPDATES</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="signature-page">
+  <main class="signature-page-wrap local-tool-page">
+    <a class="signature-back-link" href="index.html">← Back to New SARKARI UPDATES</a>
+    <header class="signature-tool-header"><h1>Photo Sign Joiner</h1><p>Combine a photo and signature into one image on your device.</p></header>
+    <section class="signature-tool-card local-tool-card">
+      <label class="local-tool-label" for="join-photo">Choose photo</label>
+      <input class="local-tool-input" id="join-photo" type="file" accept="image/jpeg,image/png,image/webp">
+      <label class="local-tool-label" for="join-signature">Choose signature</label>
+      <input class="local-tool-input" id="join-signature" type="file" accept="image/jpeg,image/png,image/webp">
+      <label class="local-tool-label" for="join-layout">Arrangement</label>
+      <select class="local-tool-input" id="join-layout"><option value="horizontal">Photo and signature side by side</option><option value="vertical">Photo above signature</option></select>
+      <button class="local-tool-primary" id="join-download" type="button">Join &amp; download</button>
+      <p class="local-tool-status" id="join-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+</body>
+</html>

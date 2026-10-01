@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Edit Railway and Defence recruitment notice details.">
+  <title>Admin — Edit Recruitment Notice | New SARKARI UPDATES</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js" defer></script>
+  <script src="firebase-cloud.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="admin.js" defer></script>
+</head>
+<body class="signature-page">
+  <main class="signature-page-wrap local-tool-page admin-page" data-recruitment-admin>
+    <a class="signature-back-link" href="railway-defence.html">← Back to recruitment notice</a>
+    <header class="signature-tool-header">
+      <h1>Admin — Edit Recruitment Notice</h1>
+      <p>Edit each section of the Railway &amp; Defence notice, then save to preview it on the detail page.</p>
+      <p><a class="signature-launch-link" href="update-admin.html">＋ Add vacancy / update in any homepage column</a></p>
+    </header>
+    <p class="admin-storage-note"><strong>Important:</strong> Sign in with the Firebase admin account below to sync changes to Firestore and publish them for visitors. Without sign-in, changes remain only in this browser.</p>
+
+    <section class="admin-homepage-settings" id="homepage-settings" aria-labelledby="homepage-settings-title">
+      <h2 id="homepage-settings-title">Homepage Page Customization</h2>
+      <p>Change homepage headings, announcement text, colors and section visibility. Vacancy columns, logos and social links have their own editors below. Sign in above to sync changes to Firebase.</p>
+      <form class="signature-tool-card admin-form" id="homepage-settings-form">
+        <label>Website name<input class="local-tool-input" name="siteName" type="text" maxlength="80"></label>
+        <label>Header subtitle / website address<input class="local-tool-input" name="siteSubtitle" type="text" maxlength="120"></label>
+        <label>Homepage main heading<input class="local-tool-input" name="pageHeading" type="text" maxlength="160"></label>
+        <label>Welcome text<input class="local-tool-input" name="welcomeText" type="text" maxlength="240"></label>
+        <label class="homepage-settings-wide">Announcement ticker <small>One announcement per line.</small><textarea class="local-tool-input" name="announcements" rows="4"></textarea></label>
+        <label class="homepage-settings-wide">Disclaimer text<input class="local-tool-input" name="disclaimer" type="text" maxlength="500"></label>
+        <label>Primary theme color<input class="local-tool-input" name="primaryColor" type="color"></label>
+        <label>Heading accent color<input class="local-tool-input" name="headingColor" type="color"></label>
+        <fieldset class="homepage-visibility homepage-settings-wide">
+          <legend>Show or hide homepage sections</legend>
+          <label><input name="showTicker" type="checkbox"> Announcement ticker</label>
+          <label><input name="showFeatured" type="checkbox"> Featured links</label>
+          <label><input name="showTools" type="checkbox"> Sarkari tools section</label>
+          <label><input name="showUpdates" type="checkbox"> Vacancy and update columns</label>
+          <label><input name="showDisclaimer" type="checkbox"> Disclaimer and footer branding</label>
+        </fieldset>
+        <div class="admin-actions homepage-settings-wide">
+          <button class="local-tool-primary" type="submit">Save homepage customization</button>
+          <button class="image-secondary-button" id="homepage-settings-reset" type="button">Restore homepage defaults</button>
+          <a class="signature-launch-link" href="index.html">Preview homepage</a>
+        </div>
+        <p class="local-tool-status homepage-settings-wide" id="homepage-settings-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="admin-branding" aria-labelledby="branding-title">
+      <h2 id="branding-title">Homepage Logo Settings</h2>
+      <p>Paste a public image URL for the header logo and the logo shown directly below the disclaimer. Add a destination URL to make each logo clickable.</p>
+      <form class="signature-tool-card admin-form" id="branding-admin-form">
+        <h3>Header logo</h3>
+        <label>Header logo image URL<input class="local-tool-input" name="headerImageUrl" type="url" placeholder="https://example.com/header-logo.png"></label>
+        <label>Header logo click-through URL<input class="local-tool-input" name="headerClickUrl" type="url" placeholder="https://example.com/"></label>
+        <h3>Logo below disclaimer</h3>
+        <label>Footer logo image URL<input class="local-tool-input" name="footerImageUrl" type="url" placeholder="https://example.com/footer-logo.png"></label>
+        <label>Footer logo click-through URL<input class="local-tool-input" name="footerClickUrl" type="url" placeholder="https://example.com/"></label>
+        <div class="admin-actions">
+          <button class="local-tool-primary" type="submit">Save logo settings</button>
+          <button class="image-secondary-button" id="branding-reset" type="button">Remove custom logos</button>
+          <a class="signature-launch-link" href="index.html">Preview homepage</a>
+        </div>
+        <p class="local-tool-status" id="branding-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="admin-social-settings" aria-labelledby="social-settings-title">
+      <h2 id="social-settings-title">Homepage Social Links Ticker</h2>
+      <p>Add Telegram, Instagram, YouTube, website or other channel links. The links appear in an automatically scrolling strip below the main menu.</p>
+      <form class="signature-tool-card admin-form" id="social-admin-form">
+        <div class="social-admin-links" id="social-admin-links" aria-live="polite"></div>
+        <button class="image-secondary-button" id="social-admin-add" type="button">+ Add social link</button>
+        <label class="social-admin-speed">Scroll speed (seconds per loop)<input class="local-tool-input" name="speed" type="number" min="10" max="90" value="30"></label>
+        <label class="social-admin-autoscroll"><input name="enabled" type="checkbox" checked> Enable automatic scrolling</label>
+        <div class="admin-actions">
+          <button class="local-tool-primary" type="submit">Save social links</button>
+          <button class="image-secondary-button" id="social-admin-reset" type="button">Remove all social links</button>
+          <a class="signature-launch-link" href="index.html">Preview homepage</a>
+        </div>
+        <p class="local-tool-status" id="social-admin-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <form class="signature-tool-card admin-form" id="recruitment-admin-form">
+      <label>Page title<input class="local-tool-input" name="title" required></label>
+      <label>Organization / department<input class="local-tool-input" name="organization"></label>
+      <div class="admin-field-row">
+        <label>Post date<input class="local-tool-input" name="postDate"></label>
+        <label>Last updated<input class="local-tool-input" name="updatedAt"></label>
+      </div>
+      <label>Short information / summary<textarea class="local-tool-input" name="shortInfo" rows="3"></textarea></label>
+      <label>Recruitment rows <small>One row per line; use | between post name, total posts and eligibility/details.</small><textarea class="local-tool-input" name="vacancies" rows="4"></textarea></label>
+      <label>Important dates <small>One row per line; use | between event and date/details.</small><textarea class="local-tool-input" name="importantDates" rows="4"></textarea></label>
+      <label>Application fee <small>One item per line.</small><textarea class="local-tool-input" name="applicationFee" rows="3"></textarea></label>
+      <label>Age limit <small>One item per line.</small><textarea class="local-tool-input" name="ageLimit" rows="3"></textarea></label>
+      <label>Eligibility <small>One item per line.</small><textarea class="local-tool-input" name="eligibility" rows="3"></textarea></label>
+      <label>Selection process <small>One item per line.</small><textarea class="local-tool-input" name="selectionProcess" rows="3"></textarea></label>
+      <label>How to apply <small>One step per line.</small><textarea class="local-tool-input" name="howToApply" rows="4"></textarea></label>
+      <label>Notification details <small>One item per line.</small><textarea class="local-tool-input" name="noticeDetails" rows="4"></textarea></label>
+      <label>Apply online URL<input class="local-tool-input" name="applyUrl" type="url" placeholder="https://..."></label>
+      <label>Official notification / website URL<input class="local-tool-input" name="officialUrl" type="url" placeholder="https://..."></label>
+      <div class="admin-actions">
+        <button class="local-tool-primary" type="submit">Save notice</button>
+        <button class="image-secondary-button" id="admin-reset" type="button">Restore template</button>
+        <a class="signature-launch-link" href="railway-defence.html">Preview detail page</a>
+        <a class="signature-launch-link" href="update-admin.html">Edit homepage updates</a>
+      </div>
+      <p class="local-tool-status" id="admin-status" role="status" aria-live="polite"></p>
+    </form>
+
+  </main>
+</body>
+</html>

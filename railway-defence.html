@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Railway and defence recruitment notice details and application information.">
+  <title>Railway &amp; Defence Recruitment | New SARKARI UPDATES</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js" defer></script>
+  <script src="firebase-cloud.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="notice-page">
+  <header class="notice-site-header">
+    <a href="index.html">← New SARKARI UPDATES</a>
+  </header>
+  <main class="notice-detail" data-recruitment-detail>
+    <nav class="notice-breadcrumb"><a href="index.html">Home</a> / <a href="index.html#latest-jobs">Latest Jobs</a> / Railway &amp; Defence</nav>
+    <header class="notice-heading">
+      <p class="notice-organization" data-field="organization"></p>
+      <h1 data-field="title"></h1>
+      <p class="notice-summary" data-field="shortInfo"></p>
+      <p class="notice-meta">Post date: <strong data-field="postDate"></strong> <span aria-hidden="true">|</span> Updated: <strong data-field="updatedAt"></strong></p>
+    </header>
+
+    <section class="notice-panel">
+      <h2>Recruitment Overview</h2>
+      <div class="notice-table-scroll"><table><thead><tr><th>Post name</th><th>Total posts</th><th>Eligibility / details</th></tr></thead><tbody data-table="vacancies"></tbody></table></div>
+    </section>
+
+    <section class="notice-panel notice-two-columns">
+      <div><h2>Important Dates</h2><div class="notice-table-scroll"><table><thead><tr><th>Event</th><th>Date / details</th></tr></thead><tbody data-table="importantDates"></tbody></table></div></div>
+      <div><h2>Application Fee</h2><ul data-list="applicationFee"></ul></div>
+    </section>
+
+    <section class="notice-panel notice-two-columns">
+      <div><h2>Age Limit</h2><div data-lines="ageLimit"></div></div>
+      <div><h2>Eligibility</h2><div data-lines="eligibility"></div></div>
+    </section>
+
+    <section class="notice-panel notice-two-columns">
+      <div><h2>Selection Process</h2><ul data-list="selectionProcess"></ul></div>
+      <div><h2>How to Apply</h2><ol data-list="howToApply"></ol></div>
+    </section>
+
+    <section class="notice-panel">
+      <h2>Notification Details</h2>
+      <ul data-list="noticeDetails"></ul>
+    </section>
+
+    <section class="notice-links">
+      <a class="notice-apply" data-link="applyUrl" hidden>Apply Online</a>
+      <a data-link="officialUrl" hidden>Official Notification / Website</a>
+    </section>
+    <p class="notice-disclaimer">This is an independent information page. Check the official notification for current dates, eligibility, fees and application instructions before applying.</p>
+  </main>
+</body>
+</html>
