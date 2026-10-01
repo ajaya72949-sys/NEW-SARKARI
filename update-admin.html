@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Edit details for homepage exam, recruitment and government update links.">
+  <title>Admin — Edit Homepage Updates | New SARKARI UPDATES</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="signature-page">
+  <main class="signature-page-wrap local-tool-page admin-page update-admin-page">
+    <a class="signature-back-link" href="index.html">← Back to homepage</a>
+    <header class="signature-tool-header">
+      <h1>Admin — Add Vacancy / Edit Homepage Updates</h1>
+      <p>Add a vacancy or update to any homepage column (Latest Job, Admit Card, Result, Admission, Answer Key, Syllabus, Sarkari Kaam or Yojna). Choose the category below, then select “Add new vacancy / update”. Changes are saved in this browser.</p>
+    </header>
+    <p class="admin-storage-note"><strong>Important:</strong> Saved changes stay only in this browser on this device. This local editor does not publish updates for other visitors.</p>
+
+    <section class="signature-tool-card update-admin-card" id="update-admin" aria-labelledby="update-admin-title">
+      <header class="signature-tool-header">
+        <h2 id="update-admin-title">Add a vacancy / update to a column</h2>
+        <p>Choose the homepage column first, then add a new item or edit an existing one. Each item can include details, dates and multiple official links.</p>
+      </header>
+      <div class="admin-form update-admin-form">
+        <label for="update-admin-section">Category
+          <select class="local-tool-input" id="update-admin-section"></select>
+        </label>
+        <label for="update-admin-item">Existing vacancy / update to edit
+          <select class="local-tool-input" id="update-admin-item"></select>
+        </label>
+        <label class="update-admin-title-field" for="update-admin-title-input">Update title
+          <input class="local-tool-input" id="update-admin-title-input" type="text" maxlength="160" placeholder="Enter update title">
+        </label>
+        <div class="update-admin-inline-actions">
+          <button class="image-secondary-button" type="button" id="update-admin-new">＋ Add new vacancy / update</button>
+          <button class="image-secondary-button update-admin-delete" type="button" id="update-admin-delete">Delete selected update</button>
+        </div>
+        <label for="update-admin-description">Details / description
+          <textarea class="local-tool-input" id="update-admin-description" rows="4" placeholder="Add verified details for this update."></textarea>
+        </label>
+        <label for="update-admin-info">Dates / extra information
+          <textarea class="local-tool-input" id="update-admin-info" rows="4" placeholder="Add dates or other useful information."></textarea>
+        </label>
+        <fieldset class="update-admin-links">
+          <legend>Links</legend>
+          <p class="local-tool-help">Add as many official links as needed. Use a clear label for each link.</p>
+          <div id="update-admin-links-list" class="update-admin-links-list"></div>
+          <button class="image-secondary-button" type="button" id="update-admin-add-link">＋ Add link</button>
+        </fieldset>
+        <div class="admin-actions">
+          <button class="local-tool-primary" type="button" id="update-admin-save">Save update</button>
+          <button class="image-secondary-button" type="button" id="update-admin-reset">Clear saved details</button>
+          <a class="signature-launch-link" href="admin.html#homepage-settings">Customize homepage</a>
+          <a class="signature-launch-link" href="admin.html">Edit Railway &amp; Defence notice</a>
+        </div>
+        <p class="local-tool-status update-admin-status" id="update-admin-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
